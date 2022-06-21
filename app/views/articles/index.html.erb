@@ -1,5 +1,9 @@
- <h1>Articles</h1>
-
+<h1>Articles</h1>
+<%
+=begin%>
+ <p><% test %></p> 
+<%
+=end%>
 <ul>
   <% @articles.each do |article| %>
     <% unless article.archived? %>

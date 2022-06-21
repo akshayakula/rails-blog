@@ -1,6 +1,14 @@
 class ArticlesController < ApplicationController
+  attr_accessor :test
+
+  def initialize
+    @test = 'SAMPLLEEEE-----asdf--sdf-a-d-sd-f-asd--sdf-'
+  end
+
   def index
+    HardJob.perform_async('Sample of Job starting', 5)
     @articles = Article.all
+    @article = Article.find(4)
   end
 
   def show
